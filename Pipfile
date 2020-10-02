@@ -5,9 +5,14 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+rope = "*"
+black = "*"
 
 [packages]
 django = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
