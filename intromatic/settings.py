@@ -26,8 +26,13 @@ SECRET_KEY = 'mi=f*s645ut%rs5#!qo8n=r@c6h7m)2pkvzt7^8dg1%$&$50@9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','www.twitter.com']
-
+ALLOWED_HOSTS = ['127.0.0.1','www.twitter.com','localhost']
+LOGIN_URL = 'accounts/login'
+LOGIN_REDIRECT_URL = 'accounts/profile'
+LOGOUT_REDIRECT_URL = ''
+MAX_TWEET_LENGTH = 250
+MIN_TWEET_LENGTH = 2
+TWEET_ACTIONS = ['upvote','downvote','retweet']
 
 # Application definition
 
@@ -38,7 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # internal django
     'tweets.apps.TweetsConfig',
+    # third-party
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -57,7 +66,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'templates',os.path.join('templates','tweets'),
+            'templates',os.path.join('templates','base'),
             os.path.join('templates','components'),
         ],
         'APP_DIRS': True,

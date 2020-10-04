@@ -1,4 +1,4 @@
-{% extends 'tweets.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block head_title %}
 Home
@@ -11,10 +11,11 @@ Home
 </div>
 <div class="row">
     <div class="col-md-4 mx-auto col-8">
-        <form action="/post/" method="POST" class="post">
+        <div id="post-tweet-error"></div>
+        <form action="/post/" method="POST" id="postTweet">
             {% csrf_token %}
             <input type="hidden" value="/" name='forward_url' />
-            <textarea class="form-control" name="content" placeholder='Your Tweet!!'></textarea>
+            <textarea required='required' class="form-control" name="content" placeholder='Your Tweet!!'></textarea>
             <button type="submit" class="btn-lg btn-success my-4">POST</button>
         </form>
     </div>
