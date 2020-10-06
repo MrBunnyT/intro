@@ -27,6 +27,13 @@ SECRET_KEY = 'mi=f*s645ut%rs5#!qo8n=r@c6h7m)2pkvzt7^8dg1%$&$50@9'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','www.twitter.com','localhost']
+CORS_ALLOWED_ORIGINS = [
+    "https://localhost:3000",
+    "http://localhost:3000",
+    "https://localhost:8000",
+    "http://localhost:8000",
+]
+CORS_URLS_REGEX = r'^/api/.*$'
 LOGIN_URL = 'accounts/login'
 LOGIN_REDIRECT_URL = 'accounts/profile'
 LOGOUT_REDIRECT_URL = ''
@@ -47,12 +54,14 @@ INSTALLED_APPS = [
     'tweets.apps.TweetsConfig',
     # third-party
     'rest_framework',
+    'corsheaders',
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

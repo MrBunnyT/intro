@@ -34,9 +34,9 @@ def Tweet_Detail_View(request, tweet_id, *args, **kwargs):
 
 @api_view(["GET"])
 def Tweet_List_View(request, *args, **kwargs):
-    data = Tweet.objects.all()
-    Tweets = data.serialize(data, many=True)
-    response = Tweets.data
+    Tweets = Tweet.objects.all()
+    Tweets_serialized = TweetSerializer(Tweets,many=True)
+    response = Tweets_serialized.data
     return Response(response, status=200)
 
 
@@ -150,7 +150,7 @@ def Tweet_Create_View_pureDjango(request, *args, **kwargs):
 
 
 @api_view(["GET"])
-def ListView(request, *args, **kwargs):
+def ListView_pureDjango(request, *args, **kwargs):
     tweets = Tweet.objects.all()
     serialized_tweets = TweetSerializer(tweets, many=True)
     response = {
