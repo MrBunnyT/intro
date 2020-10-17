@@ -29,4 +29,5 @@ class Tweet(models.Model):
         'content' : self.content,
         # 'image' : self.image,
         'likes' : self.likes,
+        'user' : self.user,
         }

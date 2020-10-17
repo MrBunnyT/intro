@@ -49,7 +49,7 @@ def HomeView(request, *args, **kwargs):
 @vary.vary_on_headers("X-Requested-With")
 def Tweet_Create_View(request, *args, **kwargs):
     is_ajax = request.META.get("HTTP_X_REQUESTED_WITH") == "XMLHttpRequest"
-    created_tweet = TweetCreateSerializer(data=request.POST)
+    created_tweet = TweetCreateSerializer(data=request.data)
     if created_tweet.is_valid(raise_exception=True):
         if is_ajax:
             created_tweet.save(user=request.user)

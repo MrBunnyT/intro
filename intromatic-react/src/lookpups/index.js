@@ -1,3 +1,3 @@
-import {loadTweets} from './components'
+import {loadTweets,handlePostForm,handleAction} from './components'
 
-export {loadTweets}
+export {loadTweets,handlePostForm,handleAction}

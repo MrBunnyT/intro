@@ -1,4 +1,4 @@
 // import React from 'react';
-import { TweetsList } from "./components";
+import { TweetsList ,PostTweet,TweetComponents } from "./components";
 
-export {TweetsList};
+export {TweetsList ,PostTweet,TweetComponents};

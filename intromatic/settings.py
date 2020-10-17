@@ -132,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -148,3 +148,21 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
+
+DEFAULT_AUTHENTICATION_CLASSES = [
+    'rest_framework.authentication.SessionAuthentication',
+]
+
+DEFAULT_RENDERER_CLASSES = [
+    'rest_framework.renderers.JSONRenderer'
+]
+
+if DEBUG:
+    DEFAULT_RENDERER_CLASSES+= ['rest_framework.renderers.BrowsableAPIRenderer',]
+    DEFAULT_AUTHENTICATION_CLASSES += ['intromatic.rest_api.dev.DevAuth']
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES' : DEFAULT_AUTHENTICATION_CLASSES,
+    'DEFAULT_RENDERER_CLASSES' : DEFAULT_RENDERER_CLASSES
+}
+

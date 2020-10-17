@@ -1,0 +1,45 @@
+#postContent:invalid {
+  box-shadow: none;
+}
+
+#postContent:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+#postContent:-moz-ui-invalid {
+  box-shadow:none;
+}
+
+#postContent{
+  min-height: 15vh;
+  max-height: 500px;
+  width: 100%;
+}
+
+.tweet .btn-group button{
+  color:#007bff;
+  margin:0 8vw;
+  z-index: 2;
+}
+
+.tweets-container .tweet{
+  position: relative;
+  z-index: 1;
+  border: 1px solid skyblue;
+  border-radius: 5px;
+}
+.tweet .Profile{
+  position: relative;
+  width: fit-content;
+  z-index: 3;
+}
+
+.retweet {
+  position: relative;
+  z-index: 2;
+  border: 1px solid skyblue;
+  border-radius: 5px;
+}
+.retweet .link{
+  z-index: 3;
+}
