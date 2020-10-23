@@ -6,5 +6,5 @@ USER = get_user_model()
 class DevAuth(authentication.BasicAuthentication):
     def authenticate(self,request):
         query = USER.objects.all()
-        user = query.order_by('?').first()   
+        user = query.order_by('-id').first()   
         return(user,None)

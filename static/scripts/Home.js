@@ -33,7 +33,7 @@ function handlePostForm(event) {
   const form = event.target;
   const formData = new FormData(form);
   var req = new XMLHttpRequest();
-  const url = '/api/tweets/post/'
+  const url = '/api/tweets/list/'
   const method = form.getAttribute("method");
   req.open(method, url);
   req.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest");
@@ -154,7 +154,7 @@ function formatTweet(tweet) {
 function loadTweets(tweetsContainer) {
   var req = new XMLHttpRequest();
   const method = "GET";
-  const url = "/api/tweets/list/tweets";
+  const url = "/api/tweets/list/";
   const responseType = "json";
 
   req.responseType = responseType;

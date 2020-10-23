@@ -17,17 +17,8 @@ class Tweet(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-id']
+        ordering = ['-timestamp']
 
     @property
     def is_retweet(self):
         return self.parent!=None
-
-    def serialize(self):
-        return {
-        'id':self.id,
-        'content' : self.content,
-        # 'image' : self.image,
-        'likes' : self.likes,
-        'user' : self.user,
-        }

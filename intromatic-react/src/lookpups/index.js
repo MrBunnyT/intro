@@ -1,3 +1,3 @@
-import {loadTweets,handlePostForm,handleAction} from './components'
+import {AJAXLookup} from './components'
 
-export {loadTweets,handlePostForm,handleAction}
+export {AJAXLookup}

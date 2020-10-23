@@ -38,16 +38,4 @@ function AJAXLookup(method, endpoint, call, data) {
   };
 }
 
-function loadTweets(call) {
-  AJAXLookup("GET", "/api/tweets/list/tweets/", call);
-}
-
-function handlePostForm(newTweet, call) {
-  AJAXLookup("POST", "/api/tweets/post/", call, { content: newTweet });
-}
-
-function handleAction(data, call) {
-  AJAXLookup("POST", "/api/tweets/action/", call, data);
-}
-
-export { loadTweets, handlePostForm, handleAction };
+export { AJAXLookup };

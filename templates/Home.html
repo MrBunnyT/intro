@@ -1,27 +1,11 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block head_title %}
-Home
-{% endblock head_title %}
-{% block content %}
-<div class="row">
-    <div class="col text-center mb-4">
-        <h1>Welcome To Intromatic</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4 mx-auto col-8">
-        <div id="post-tweet-error"></div>
-        <form action="/post/" method="POST" id="postTweet">
-            {% csrf_token %}
-            <input type="hidden" value="/" name='forward_url' />
-            <textarea required='required' class="form-control" name="content" placeholder='Your Tweet!!'></textarea>
-            <button type="submit" class="btn-lg btn-success my-4">POST</button>
-        </form>
-    </div>
-</div>
-<div class="row text-center" id="tweets">
-    loading....
-</div>
-<script src="{% static 'scripts/Home.js' %}"></script>
+{% extends 'base.html' %} {% load static %} {% block head_title %} Home
+{%endblock head_title %} {% block content %}
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="Main_App" data-username="MrBunny" data-can-tweet="True"></div>
+<div
+  id="Main_Tweets"
+  data-username=""
+  data-can-tweet="True"
+  data-tweet-id="1"
+></div>
 {% endblock content %}
